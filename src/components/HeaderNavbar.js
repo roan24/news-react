@@ -2,18 +2,23 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import { LinkContainer } from "react-router-bootstrap";
 
 const HeaderNavbar = () => {
   return (
     <>
       <Navbar bg="light">
         <Container>
-          <Navbar.Brand href="#home">News Site</Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand>News Site</Navbar.Brand>
+          </LinkContainer>
           <Nav>
-            <Nav.Link href="#deets">Log in</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Sign up
-            </Nav.Link>
+            <LinkContainer to="login">
+              <Nav.Link>Log in</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="signup">
+              <Nav.Link>Sign up</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Container>
       </Navbar>
